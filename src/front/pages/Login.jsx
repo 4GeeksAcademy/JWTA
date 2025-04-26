@@ -30,7 +30,7 @@ export const Login = () => {
             if (res.ok) {
 
                 localStorage.setItem("access_token", data.access_token);
-                navigate("/private");
+                navigate("/profile");
             } else {
                 setError(data.message || "Error al iniciar sesión");
             }
