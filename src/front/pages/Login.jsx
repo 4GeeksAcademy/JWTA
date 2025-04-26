@@ -30,7 +30,7 @@ export const Login = () => {
             if (res.ok) {
 
                 localStorage.setItem("access_token", data.access_token);
-                navigate("/profile");
+                navigate("/private");
             } else {
                 setError(data.message || "Error al iniciar sesión");
             }
@@ -63,15 +63,12 @@ export const Login = () => {
                         onChange={handleChange}
                         className="w-50 p-2 mt-3 border rounded"
                     />
-
-                    {error && <p className="text-danger mt-2">{error}</p>}
-
-                    <button onClick={handleLogin} className="mt-4 p-2 btn bg-info text-white">
+                    <button onClick={handleLogin} className="mt-4 p-2 btn bg-primary">
                         Iniciar sesión
                     </button>
-                    <p>
-                        <Link to="/register" className="btn text-warning m-0">Crear Cuenta</Link>
-                    </p>
+                    <button className="btn btn secondary">
+                        <Link to="/register">Crear Cuenta</Link>
+                    </button>
             </div>
         </div>
     );

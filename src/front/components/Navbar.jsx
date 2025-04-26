@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 
+	const handleLogout = () => {
+		localStorage.removeItem("access_token");
+		navigate("/register");                    
+	  };
+
 	return (
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
@@ -11,6 +16,11 @@ export const Navbar = () => {
 				<div className="ml-auto">
 					<Link to="/demo">
 						<button className="btn btn-primary">Check the Context in action</button>
+					</Link>
+				</div>
+				<div className="ml-auto">
+					<Link to="/login" onClick={handleLogout}>
+						<button className="btn btn-danger">Cerrar sesión</button>
 					</Link>
 				</div>
 			</div>

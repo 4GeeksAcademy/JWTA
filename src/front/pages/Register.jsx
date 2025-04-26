@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const baseUrl = import.meta.env.VITE_API_URL;
 
@@ -83,6 +83,9 @@ export const Register = () => {
                     />
                     <button onClick={handleRegister} className="btn btn-primary text-white my-4 w-100">
                     Confirmar y Registrarse
+                    </button>
+                    <button className="btn btn secondary">
+                              <Link to="/login">Login</Link>
                     </button>
                 </div>
             </div>
